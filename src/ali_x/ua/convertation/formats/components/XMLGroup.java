@@ -3,9 +3,6 @@ package ali_x.ua.convertation.formats.components;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- * Created by Ali-X on 10.07.2017.
- */
 public class XMLGroup extends SerializationComponent {
 
     ArrayList xmlComponents = new ArrayList();
@@ -15,13 +12,14 @@ public class XMLGroup extends SerializationComponent {
     }
 
     public void getInfo() {
-        System.out.println("<group>");
+        string.append(collection.getFigureGroupStartTag());
+        string.append(collection.getNewLine());
         Iterator xmlIterator = xmlComponents.iterator();
         while (xmlIterator.hasNext()) {
             SerializationComponent shape = (SerializationComponent) xmlIterator.next();
             shape.getInfo();
         }
-        System.out.println("</group>");
+        string.append(collection.getFigureGroupEndTag());
     }
 }
 

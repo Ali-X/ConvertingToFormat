@@ -3,9 +3,6 @@ package ali_x.ua.convertation.formats.components;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- * Created by Ali-X on 10.07.2017.
- */
 public class JSONGroup extends SerializationComponent {
 
     ArrayList jsonComponents = new ArrayList();
@@ -15,14 +12,18 @@ public class JSONGroup extends SerializationComponent {
     }
 
     public void getInfo() {
-        System.out.println("\"group\": {");
+        string.append(collection.getFigureGroupStartTag());
+        string.append(collection.getNewLine());
         Iterator jsonIterator = jsonComponents.iterator();
         while (jsonIterator.hasNext()) {
             SerializationComponent shape = (SerializationComponent) jsonIterator.next();
             shape.getInfo();
-            if (jsonIterator.hasNext()) System.out.println(",");
+            if (jsonIterator.hasNext()) {
+                string.append(collection.getComma());
+                string.append(collection.getNewLine());
+            }
         }
-        System.out.print("}");
+        string.append(collection.getFigureGroupEndTag());
     }
 }
 

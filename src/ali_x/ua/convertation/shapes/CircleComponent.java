@@ -1,8 +1,5 @@
 package ali_x.ua.convertation.shapes;
 
-/**
- * Created by Ali-X on 09.07.2017.
- */
 public class CircleComponent extends ShapeComponent {
 
     private double r;
