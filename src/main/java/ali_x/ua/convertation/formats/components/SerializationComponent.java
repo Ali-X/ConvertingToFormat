@@ -45,7 +45,6 @@ public abstract class SerializationComponent {
         string.append(collection.getNewLine());
         getInfo();
         string.append(collection.getBottom());
-        //     string.append(collection.getNewLine());
     }
 
 }
